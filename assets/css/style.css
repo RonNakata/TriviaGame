@@ -32,6 +32,30 @@ body {
     color: white;
 }
 
+#startbutton{
+    font-family: Matrix;
+    font-size: 40px;
+    margin-top: 80px;
+    color: white;
+    background-color: midnightblue;
+}
+
+#startbutton:hover{
+    background-color: blue;
+}
+
+#resetbutton{
+    font-family: Matrix;
+    font-size: 30px;
+    margin-top: 10px;
+    color: white;
+    background-color: midnightblue;
+}
+
+#resetbutton:hover{
+    background-color: blue;
+}
+
 #blueme{
     background-color: midnightblue;
     
@@ -48,6 +72,10 @@ body {
     font-family: 'OCRAEXT';
     line-height: 40px;
     font-size: 18px;
+}
+
+.answer:hover{
+    background-color: mediumseagreen;
 }
 
 .timeleft{

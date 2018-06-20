@@ -78,7 +78,7 @@ var selectedA;
 //  Global var for which question we are on
 var onQnum=1;
 // Variable for time left to answer question
-var timeleft = 10;
+var timeleft = 30;
 //  Timer to answer question variable
 var intervalId;
 // Variables to track correct & incorrect
@@ -147,7 +147,7 @@ function alldone() {
     $('.varDisArea').append("<br><br>");
     $('.varDisArea').append("Incorrect Answers: " + incorrectA);
     $('.varDisArea').append("<br><br>");
-    $('.varDisArea').append('<button id="resetbutton">Reset</button>');
+    $('.varDisArea').append('<button id="resetbutton">RESET</button>');
 
 }
 
@@ -166,41 +166,42 @@ function divQA() {
 
 //  Function to put up correct answer display
 function gotitright() {
-    $('.varDisArea').html("Correct answer!");
+    $('.varDisArea').html('<img src="assets/images/correct.gif">');
     onQnum++;
     correctA++;
     stop();
     if(onQnum<11) {
         setTimeout(function() {
             askQ(onQnum);  
-        }, 1000);
+        }, 2000);
     }
     else {
         setTimeout(function() {
             alldone();  
-        }, 1000);    
+        }, 1500);    
     }
 }
 
 //  Function to let you know you got it wrong, and display what the correct answer was
 function gotitwrong() {
-    $('.varDisArea').html("Wrong answer.");
+    $('.varDisArea').html('<img src="assets/images/nope.gif">');
     $('.varDisArea').append("<br><br>");
     $('.varDisArea').append("The correct answer was: ");
     $('.varDisArea').append("<br><br>");
-    $('.varDisArea').append(questions["q" + onQnum][1]);
+    var corans=(questions["q" + onQnum][1]);
+    $('.varDisArea').append('<div class="answer">' + corans + '</div>');
     onQnum++;
     incorrectA++;
     stop();
     if(onQnum<11) {
         setTimeout(function() {
             askQ(onQnum);  
-        }, 1000);
+        }, 2000);
     }
     else {
         setTimeout(function() {
             alldone();  
-        }, 1000);    
+        }, 1500);    
     }
 
 }
@@ -221,13 +222,21 @@ function askQ(onQue) {
     startTimer();
 }
 
-//  Start button
-$("#startbutton").on("click", function() {
-    askQ(onQnum);
-});
+// Function to toss up the start button and reset variables
+function startup() {
+    $('.varDisArea').html('<button id="startbutton">START</button>');
+    onQnum=1;
+    correctA=0;
+    incorrectA=0;
+}
 
 
 $(document).ready(function() {
+
+    //  Check for click on Start button
+    $(document).on("click", "#startbutton", function() {
+        askQ(onQnum);
+    });
 
     //  This checks if an answer has been selected and evaluates the answer
     $(document).on("click", ".answer", function(){
@@ -246,7 +255,7 @@ $(document).ready(function() {
 
     //  Check for click on reset button
     $(document).on("click", "#resetbutton", function(){
-        location.reload(true); 
+        startup(); 
     });
 
 });
