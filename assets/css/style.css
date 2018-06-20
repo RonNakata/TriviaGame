@@ -1,0 +1,58 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+@font-face {
+    font-family: Matrix;
+    src: url(matrix.ttf);
+}
+@font-face {
+    font-family: OCRAEXT;
+    src: url(OCRAEXT.TTF);
+}
+
+body {
+    background-image: url(../images/matrixbackground.jpg);
+    background-size: stretch;
+}
+
+.gamebox {
+    width: 70%;
+    background-color: darkgrey;
+    margin: auto;
+    text-align: center;
+    margin-top: 2%;
+    height: 500px;
+    padding: 10px;
+}
+.title {
+    font-family: Matrix;
+    font-size: 40px;
+    margin-bottom: 80px;
+    color: white;
+}
+
+#blueme{
+    background-color: midnightblue;
+    
+}
+
+.question {
+    border-bottom: 3px solid black;
+    font-family: 'OCRAEXT';
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.answer {
+    font-family: 'OCRAEXT';
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.timeleft{
+    margin-bottom: 20px;
+}
+
+
+
