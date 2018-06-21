@@ -110,7 +110,7 @@ function decrement() {
 //  Funcion to stop the timer
 function stop() {
     clearInterval(intervalId);
-    timeleft=10;
+    timeleft=30;
   }
 
 //  Randomize array element order in-place.
